@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VerdaMetric AI — AI-Powered Sustainability &amp; ESG Analytics</title>
+  <meta name="description" content="Enterprise AI sustainability analytics platform for Scope 1-3 footprint forecasting, ESG scoring, and decarbonization intelligence.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/css/variables.css">
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/components.css">
+  <link rel="stylesheet" href="/static/css/pages.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container-wide navbar-inner">
+      <a href="#home" class="brand-logo" data-nav="home">
+        <div class="brand-icon-wrapper"><i class="fa-solid fa-leaf"></i></div>
+        <span>VerdaMetric <span style="color: var(--brand-emerald)">AI</span></span>
+        <span class="nav-status-pill"><span class="pulse-dot"></span> ML Engine v2.4</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a class="nav-link active" data-nav="home"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a class="nav-link" data-nav="prediction"><i class="fa-solid fa-bolt"></i> Prediction</a></li>
+        <li><a class="nav-link" data-nav="performance"><i class="fa-solid fa-chart-line"></i> Model Performance</a></li>
+        <li><a class="nav-link" data-nav="dataset"><i class="fa-solid fa-database"></i> Dataset</a></li>
+        <li><a class="nav-link" data-nav="about"><i class="fa-solid fa-circle-nodes"></i> Architecture</a></li>
+        <li><a class="nav-link" data-nav="contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-secondary btn-sm" data-open-modal="modelGuide" title="Learn how to replace ML model &amp; dataset">
+          <i class="fa-solid fa-code-merge"></i> Model Guide
+        </button>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i id="themeIcon" class="fa-solid fa-sun"></i>
+        </button>
+        <button id="mobileToggle" class="btn-icon mobile-toggle" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon-wrapper"><i class="fa-solid fa-leaf"></i></div>
+        <span>VerdaMetric AI</span>
+      </div>
+      <button id="drawerClose" class="btn-icon" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-links">
+      <li><a class="nav-link active" data-nav="home"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a class="nav-link" data-nav="prediction"><i class="fa-solid fa-bolt"></i> Prediction Studio</a></li>
+      <li><a class="nav-link" data-nav="performance"><i class="fa-solid fa-chart-line"></i> Model Performance</a></li>
+      <li><a class="nav-link" data-nav="dataset"><i class="fa-solid fa-database"></i> Dataset Explorer</a></li>
+      <li><a class="nav-link" data-nav="about"><i class="fa-solid fa-circle-nodes"></i> System Architecture</a></li>
+      <li><a class="nav-link" data-nav="contact"><i class="fa-solid fa-envelope"></i> Contact &amp; FAQ</a></li>
+    </ul>
+    <div style="margin-top: 2rem; display:flex; gap:0.75rem;">
+      <button class="btn btn-secondary btn-sm" data-open-modal="modelGuide" style="flex:1">
+        <i class="fa-solid fa-code-merge"></i> Model Replacement Guide
+      </button>
+      <button id="mobileThemeToggle" class="btn-icon" aria-label="Toggle Theme"><i class="fa-solid fa-circle-half-stroke"></i></button>
+    </div>
+  </div>
+
+  <main id="appMain" class="main-content">
+
+    <!-- VIEW 1: HOME -->
+    <section id="view-home" class="page-view active">
+      <div class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-left">
+            <div class="hero-badge">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> AI-Powered Sustainability Intelligence
+            </div>
+            <h1 class="hero-title">
+              Predict, Analyze &amp; Cut Carbon Emissions with <span class="hero-title-accent">Enterprise ML</span>
+            </h1>
+            <p class="hero-subtitle">
+              Transform complex Scope 1, 2, and 3 industrial footprints into predictive ESG ratings, greenhouse gas forecasts, and quantitative decarbonization playbooks.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" data-nav="prediction">
+                <i class="fa-solid fa-bolt"></i> Launch Prediction Studio
+              </a>
+              <a class="btn btn-secondary btn-lg" data-nav="performance">
+                <i class="fa-solid fa-chart-pie"></i> Explore Model Performance
+              </a>
+            </div>
+            <div class="hero-stats-strip">
+              <div class="hero-stat-item">
+                <span class="hero-stat-val">1.5k+</span>
+                <span class="hero-stat-lbl">Trained Facilities</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-val">96.3%</span>
+                <span class="hero-stat-lbl">Model ROC-AUC</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-val">1.8ms</span>
+                <span class="hero-stat-lbl">Inference Speed</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-val">42%</span>
+                <span class="hero-stat-lbl">Avg Carbon Reduction</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-preview-card">
+              <div class="preview-chip-strip">
+                <span><i class="fa-solid fa-microchip"></i> Live Model Telemetry</span>
+                <span class="badge badge-emerald">Random Forest Active</span>
+              </div>
+              <div class="preview-metric-display">
+                <div class="card-desc">Simulated Enterprise Facility</div>
+                <div class="preview-metric-row" style="margin: 0.5rem 0;">
+                  <div class="preview-val-huge">Grade A</div>
+                  <span class="badge badge-emerald" style="font-size:0.85rem">94.8% Confidence</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary)">
+                  Annual Carbon: <strong>385.2 MT CO2e</strong> &bull; Intensity: <strong>88.4 kWh/m²</strong>
+                </p>
+              </div>
+
+              <div class="emission-stack" style="margin: 1.25rem 0;">
+                <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700; color:var(--text-muted);">
+                  <span>Scope 1 (Fuel)</span>
+                  <span>Scope 2 (Grid)</span>
+                  <span>Scope 3 (Supply Chain)</span>
+                </div>
+                <div class="stack-bar-wrapper">
+                  <div class="stack-segment stack-seg-1" style="width: 22%"></div>
+                  <div class="stack-segment stack-seg-2" style="width: 53%"></div>
+                  <div class="stack-segment stack-seg-3" style="width: 25%"></div>
+                </div>
+              </div>
+
+              <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); display:flex; align-items:center; gap:0.75rem;">
+                <div style="color: var(--brand-emerald); font-size: 1.5rem;"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                  <div style="font-size: 0.85rem; font-weight: 700;">Top AI Recommendation</div>
+                  <div style="font-size: 0.78rem; color: var(--text-secondary);">Deploy Solar PPA: Est. -142 MT CO2e / yr savings ($38,400/yr).</div>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.25rem; text-align: right;">
+                <a class="btn btn-outline btn-sm" data-nav="prediction">Try Interactive Studio &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Features Grid -->
+      <section class="features-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">Enterprise Capabilities</div>
+            <h2 class="section-title">Engineered for Verifiable Industrial Sustainability</h2>
+            <p class="section-desc">Move beyond retrospective carbon accounting. Predict emissions before they occur and prioritize high-ROI decarbonization investments.</p>
+          </div>
+
+          <div class="features-grid">
+            <div class="card card-interactive feature-card">
+              <div class="feature-icon-box"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+              <h3 class="feature-title">Scope 1, 2 &amp; 3 Accounting</h3>
+              <p class="feature-desc">Automated greenhouse gas protocol calculations across fossil combustion, regional electricity grid carbon intensity, and supply chain logistics.</p>
+            </div>
+
+            <div class="card card-interactive feature-card">
+              <div class="feature-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+              <h3 class="feature-title">Real-Time Risk Classification</h3>
+              <p class="feature-desc">Trained ensemble models classify facility operational profiles into actionable tiers (Net-Zero Leader, Efficient, Moderate, High Carbon Risk).</p>
+            </div>
+
+            <div class="card card-interactive feature-card">
+              <div class="feature-icon-box"><i class="fa-solid fa-sliders"></i></div>
+              <h3 class="feature-title">AI Decarbonization Playbook</h3>
+              <p class="feature-desc">Dynamically generates quantified recommendations with estimated CO2 abatement, capital payback horizons, and annual operational cost savings.</p>
+            </div>
+
+            <div class="card card-interactive feature-card">
+              <div class="feature-icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+              <h3 class="feature-title">ESG Compliance Ready</h3>
+              <p class="feature-desc">Align your facility disclosures with international reporting mandates including EU CSRD, SEC Climate Rules, and ISO 14064 certification.</p>
+            </div>
+
+            <div class="card card-interactive feature-card">
+              <div class="feature-icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+              <h3 class="feature-title">Peak Demand &amp; Grid Balancing</h3>
+              <p class="feature-desc">Evaluates peak load factors and equipment SEER ratings to highlight demand charges and battery storage arbitrage opportunities.</p>
+            </div>
+
+            <div class="card card-interactive feature-card">
+              <div class="feature-icon-box"><i class="fa-solid fa-code-compare"></i></div>
+              <h3 class="feature-title">Transparent &amp; Auditable ML</h3>
+              <p class="feature-desc">Full feature importance attribution, confusion matrices, and ROC curves ensure no black-box decisions in corporate boardrooms.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="workflow-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">System Pipeline</div>
+            <h2 class="section-title">How the Analytics Engine Works</h2>
+            <p class="section-desc">From raw operational metrics to board-ready decarbonization recommendations in milliseconds.</p>
+          </div>
+
+          <div class="workflow-steps">
+            <div class="step-card">
+              <div class="step-number">01</div>
+              <h4 class="step-title">Resource Ingestion</h4>
+              <p class="step-desc">Input facility telemetry including electricity kWh, renewable share %, logistics distances, and recycling rates.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">02</div>
+              <h4 class="step-title">Feature Scaling</h4>
+              <p class="step-desc">Z-score normalization and domain-specific GHG protocol coefficients calibrate metrics against national grid baselines.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">03</div>
+              <h4 class="step-title">Ensemble Inference</h4>
+              <p class="step-desc">Trained Random Forest classification engine computes multi-tier sustainability probabilities and confidence scores.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">04</div>
+              <h4 class="step-title">Action Roadmap</h4>
+              <p class="step-desc">Receives a customized decarbonization roadmap with quantified emissions savings and projected financial ROI.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits & ROI Comparison -->
+      <section class="benefits-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">Strategic Value</div>
+            <h2 class="section-title">Modern AI vs. Legacy Sustainability Audits</h2>
+            <p class="section-desc">Why enterprise leaders are replacing manual consultant spreadsheets with predictive machine learning.</p>
+          </div>
+
+          <div class="comparison-grid">
+            <div class="comp-col-legacy">
+              <h3 style="color: var(--text-muted); display: flex; align-items:center; gap: 0.5rem;">
+                <i class="fa-solid fa-clock-rotate-left"></i> Legacy Manual Audits
+              </h3>
+              <ul class="comp-list">
+                <li class="comp-item"><i class="fa-solid fa-xmark" style="color: var(--accent-rose)"></i> 4 to 12 weeks turnaround time per facility assessment.</li>
+                <li class="comp-item"><i class="fa-solid fa-xmark" style="color: var(--accent-rose)"></i> Expensive consultant fees ($25k–$75k per report).</li>
+                <li class="comp-item"><i class="fa-solid fa-xmark" style="color: var(--accent-rose)"></i> Static retrospective snapshot; cannot simulate future interventions.</li>
+                <li class="comp-item"><i class="fa-solid fa-xmark" style="color: var(--accent-rose)"></i> Inconsistent methodology across global operational sites.</li>
+              </ul>
+            </div>
+
+            <div class="comp-col-modern">
+              <span class="badge badge-emerald" style="position: absolute; top: 1.5rem; right: 1.5rem;">Recommended</span>
+              <h3 style="color: var(--brand-emerald); display: flex; align-items:center; gap: 0.5rem;">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> VerdaMetric AI Platform
+              </h3>
+              <ul class="comp-list">
+                <li class="comp-item"><i class="fa-solid fa-check" style="color: var(--brand-emerald)"></i> Instant real-time inference (sub-2ms execution).</li>
+                <li class="comp-item"><i class="fa-solid fa-check" style="color: var(--brand-emerald)"></i> Continuous forecasting with zero recurring consultant overhead.</li>
+                <li class="comp-item"><i class="fa-solid fa-check" style="color: var(--brand-emerald)"></i> Interactive What-If scenario modeling with immediate feedback.</li>
+                <li class="comp-item"><i class="fa-solid fa-check" style="color: var(--brand-emerald)"></i> Mathematically calibrated against 1,500+ enterprise benchmarks.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cta-banner">
+            <h3 class="cta-title">Accelerate Your Facility Decarbonization Today</h3>
+            <p style="color: var(--text-secondary); max-width: 550px; margin: 0 auto 1.75rem;">
+              Test live predictions, simulate renewable energy investments, and inspect verified model metrics in seconds.
+            </p>
+            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+              <a class="btn btn-primary btn-lg" data-nav="prediction"><i class="fa-solid fa-bolt"></i> Test Prediction Studio</a>
+              <button class="btn btn-secondary btn-lg" data-open-modal="modelGuide"><i class="fa-solid fa-code-merge"></i> Replace With Your ML Model</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ==================== VIEW 2: PREDICTION STUDIO ==================== -->
+    <section id="view-prediction" class="page-view">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+          <div class="section-tag">Machine Learning Inference Engine</div>
+          <h2 class="section-title">Sustainability &amp; Carbon Prediction Studio</h2>
+          <p class="section-desc">Enter your facility operational data or select a pre-configured enterprise scenario to generate real-time ESG classification and decarbonization insights.</p>
+        </div>
+
+        <!-- Preset Scenarios -->
+        <div class="card" style="padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+          <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem; display:flex; align-items:center; gap:0.5rem;">
+            <i class="fa-solid fa-bolt" style="color: var(--brand-emerald)"></i> One-Click Enterprise Benchmark Presets:
+          </div>
+          <div class="preset-container" style="margin-bottom: 0;">
+            <button type="button" class="preset-pill active" data-preset="tech_campus">
+              <i class="fa-solid fa-server"></i> Green Tech Data Center (Tier A)
+            </button>
+            <button type="button" class="preset-pill" data-preset="factory">
+              <i class="fa-solid fa-industry"></i> Heavy Automotive Factory (Tier D)
+            </button>
+            <button type="button" class="preset-pill" data-preset="office_hq">
+              <i class="fa-solid fa-building"></i> Commercial Corporate HQ (Tier B)
+            </button>
+            <button type="button" class="preset-pill" data-preset="logistics">
+              <i class="fa-solid fa-truck-fast"></i> Cold-Chain Logistics Hub (Tier C)
+            </button>
+          </div>
+        </div>
+
+        <!-- Prediction Layout: Left Form, Right Result Card -->
+        <div class="prediction-layout">
+          <!-- Left: The Form -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title"><i class="fa-solid fa-sliders"></i> Operational Parameters</h3>
+                <p class="card-desc">Calibrated for Scope 1, Scope 2, and Scope 3 input telemetry.</p>
+              </div>
+            </div>
+
+            <!-- Form Tabs -->
+            <div class="form-tabs-strip">
+              <button type="button" class="form-tab-btn active" data-tab="energy">
+                <i class="fa-solid fa-plug"></i> Energy &amp; Grid
+              </button>
+              <button type="button" class="form-tab-btn" data-tab="facility">
+                <i class="fa-solid fa-building"></i> Facility &amp; Operations
+              </button>
+              <button type="button" class="form-tab-btn" data-tab="circularity">
+                <i class="fa-solid fa-recycle"></i> Logistics &amp; Waste
+              </button>
+            </div>
+
+            <form id="predictionForm" novalidate>
+              <!-- TAB 1: Energy & Grid -->
+              <div id="pane-energy" class="form-tab-pane active">
+                <div class="form-group">
+                  <label class="form-label" for="monthly_energy_kwh">
+                    <span>Monthly Electricity Consumption</span>
+                    <span class="label-hint">1,000 - 500,000 kWh</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="monthly_energy_kwh" class="form-input" min="1000" max="500000" value="48000" required>
+                    <span class="input-unit">kWh</span>
+                  </div>
+                  <div class="form-error">Please enter between 1,000 and 500,000 kWh.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="renewable_energy_pct">
+                    <span>Renewable Energy Share</span>
+                    <span class="label-hint">0 - 100%</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="renewable_energy_pct" class="form-input" min="0" max="100" step="0.5" value="85" required>
+                    <span class="input-unit">%</span>
+                  </div>
+                  <div class="form-error">Percentage must be between 0 and 100%.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="peak_load_factor">
+                    <span>Peak Load Factor (Demand Ratio)</span>
+                    <span class="label-hint">0.1 - 1.0</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="peak_load_factor" class="form-input" min="0.1" max="1.0" step="0.01" value="0.52" required>
+                    <span class="input-unit">ratio</span>
+                  </div>
+                  <div class="form-error">Factor must be between 0.1 and 1.0.</div>
+                </div>
+              </div>
+
+              <!-- TAB 2: Facility & Operations -->
+              <div id="pane-facility" class="form-tab-pane">
+                <div class="form-group">
+                  <label class="form-label" for="facility_area_sqm">
+                    <span>Gross Facility Area</span>
+                    <span class="label-hint">500 - 100,000 m²</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="facility_area_sqm" class="form-input" min="500" max="100000" value="24000" required>
+                    <span class="input-unit">m²</span>
+                  </div>
+                  <div class="form-error">Area must be between 500 and 100,000 m².</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="operational_days_year">
+                    <span>Operational Days / Year</span>
+                    <span class="label-hint">100 - 365 days</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="operational_days_year" class="form-input" min="100" max="365" value="360" required>
+                    <span class="input-unit">days</span>
+                  </div>
+                  <div class="form-error">Must be between 100 and 365 days.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="equipment_efficiency_rating">
+                    <span>Equipment Efficiency (SEER Rating)</span>
+                    <span class="label-hint">1.0 - 5.0 rating</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="equipment_efficiency_rating" class="form-input" min="1.0" max="5.0" step="0.1" value="4.8" required>
+                    <span class="input-unit">SEER</span>
+                  </div>
+                  <div class="form-error">Rating must be between 1.0 and 5.0.</div>
+                </div>
+              </div>
+
+              <!-- TAB 3: Logistics & Waste -->
+              <div id="pane-circularity" class="form-tab-pane">
+                <div class="form-group">
+                  <label class="form-label" for="logistics_distance_km">
+                    <span>Monthly Logistics Fleet Distance</span>
+                    <span class="label-hint">0 - 100,000 km</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="logistics_distance_km" class="form-input" min="0" max="100000" value="1800" required>
+                    <span class="input-unit">km</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="fuel_consumed_liters">
+                    <span>Monthly Direct Fuel Combustion</span>
+                    <span class="label-hint">0 - 30,000 L</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="fuel_consumed_liters" class="form-input" min="0" max="30000" value="450" required>
+                    <span class="input-unit">liters</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="waste_recycled_pct">
+                    <span>Solid Waste Recycled / Diverted</span>
+                    <span class="label-hint">0 - 100%</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="waste_recycled_pct" class="form-input" min="0" max="100" step="0.5" value="88" required>
+                    <span class="input-unit">%</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="water_usage_m3">
+                    <span>Monthly Water Consumption</span>
+                    <span class="label-hint">10 - 10,000 m³</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="number" id="water_usage_m3" class="form-input" min="10" max="10000" value="320" required>
+                    <span class="input-unit">m³</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
+                <button type="submit" id="predictBtn" class="btn btn-primary" style="flex:1">
+                  <i class="fa-solid fa-bolt"></i> Generate Sustainability Analytics
+                </button>
+                <button type="button" id="resetBtn" class="btn btn-secondary">
+                  <i class="fa-solid fa-rotate-left"></i> Reset
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right: Prediction Results Card -->
+          <div class="prediction-results-wrapper">
+            <!-- Empty State -->
+            <div id="predictionEmptyState" class="card empty-state">
+              <div class="empty-state-icon"><i class="fa-solid fa-chart-simple"></i></div>
+              <h3 style="font-size: 1.25rem;">Awaiting Model Inference</h3>
+              <p style="max-width: 380px; font-size: 0.9rem;">
+                Adjust the parameters on the left or select a preset, then click <strong>Generate Sustainability Analytics</strong> to execute the machine learning pipeline.
+              </p>
+            </div>
+
+            <!-- Skeleton Loading State -->
+            <div id="predictionSkeleton" class="card" style="display:none; padding: 2rem;">
+              <div style="display:flex; align-items:center; gap:1.5rem; margin-bottom:1.5rem;">
+                <div class="skeleton" style="width:120px; height:120px; border-radius:50%;"></div>
+                <div style="flex:1;">
+                  <div class="skeleton skeleton-text" style="width:60%; height:1.5rem;"></div>
+                  <div class="skeleton skeleton-text" style="width:40%;"></div>
+                  <div class="skeleton skeleton-text" style="width:80%;"></div>
+                </div>
+              </div>
+              <div class="skeleton skeleton-card" style="margin-bottom:1rem;"></div>
+              <div class="skeleton skeleton-card"></div>
+            </div>
+
+            <!-- Live Populated Result Card -->
+            <div id="predictionResultsCard" class="card" style="display:none;">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title"><i class="fa-solid fa-award" style="color:var(--brand-emerald)"></i> Sustainability Assessment</h3>
+                  <div id="resConfidence" class="card-desc font-mono">94.8% Model Confidence</div>
+                </div>
+                <div id="resTierBadge" class="badge badge-emerald">Net-Zero Leader</div>
+              </div>
+
+              <!-- Result Hero: Circular Gauge & High-level KPIs -->
+              <div class="result-hero">
+                <div class="rating-gauge-wrapper">
+                  <svg class="gauge-svg" viewBox="0 0 140 140">
+                    <circle class="gauge-bg" cx="70" cy="70" r="60"></circle>
+                    <circle id="resGaugeMeter" class="gauge-meter" cx="70" cy="70" r="60"></circle>
+                  </svg>
+                  <div class="gauge-content">
+                    <div id="resGrade" class="gauge-grade">A</div>
+                    <div class="gauge-label">ESG Grade</div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="card-desc">Annual Forecasted Carbon Footprint</div>
+                  <div id="resCarbonTotal" style="font-size: 1.85rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-primary); margin: 0.2rem 0;">
+                    385.2 MT CO2e
+                  </div>
+                  <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-top:0.4rem;">
+                    <span id="resBenchmarkDelta" class="badge badge-emerald">
+                      <i class="fa-solid fa-arrow-down"></i> -48.2% vs Sector Benchmark
+                    </span>
+                    <span class="badge badge-blue">
+                      Energy Intensity: <strong id="resEnergyIntensity" class="font-mono">88.4 kWh/m²</strong>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scope 1, 2, 3 Emissions Breakdown -->
+              <div class="emission-stack">
+                <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem;">
+                  Scope 1, Scope 2 &amp; Scope 3 Distribution
+                </div>
+                <div class="stack-bar-wrapper">
+                  <div id="barScope1" class="stack-segment stack-seg-1" style="width: 20%" title="Scope 1: Direct Combustion"></div>
+                  <div id="barScope2" class="stack-segment stack-seg-2" style="width: 55%" title="Scope 2: Purchased Electricity"></div>
+                  <div id="barScope3" class="stack-segment stack-seg-3" style="width: 25%" title="Scope 3: Logistics &amp; Waste"></div>
+                </div>
+                <div class="stack-legend">
+                  <div class="legend-item"><span class="legend-dot" style="background:var(--accent-rose)"></span><span id="lblScope1">Scope 1: 0 MT</span></div>
+                  <div class="legend-item"><span class="legend-dot" style="background:var(--brand-emerald)"></span><span id="lblScope2">Scope 2: 0 MT</span></div>
+                  <div class="legend-item"><span class="legend-dot" style="background:var(--accent-blue)"></span><span id="lblScope3">Scope 3: 0 MT</span></div>
+                </div>
+              </div>
+
+              <!-- Decarbonization Potential Banner -->
+              <div style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem 1.25rem; margin: 1.5rem 0;">
+                <div style="font-size: 0.775rem; font-weight: 700; text-transform: uppercase; color: var(--brand-emerald); letter-spacing: 0.05em; margin-bottom: 0.4rem;">
+                  <i class="fa-solid fa-chart-line"></i> Optimization Potential with AI Playbook
+                </div>
+                <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                  <div>
+                    <div id="resPotReduction" class="font-mono" style="font-size: 1.15rem; font-weight: 800; color: var(--brand-emerald);">-124.5 MT CO2e</div>
+                    <div style="font-size: 0.725rem; color: var(--text-muted);">Est. Carbon Abatement</div>
+                  </div>
+                  <div>
+                    <div id="resPotSavings" class="font-mono" style="font-size: 1.15rem; font-weight: 800; color: var(--accent-blue);">$45,200 / yr</div>
+                    <div style="font-size: 0.725rem; color: var(--text-muted);">Projected OPEX Savings</div>
+                  </div>
+                  <div>
+                    <div id="resProjTier" class="font-mono" style="font-size: 1.05rem; font-weight: 800; color: var(--text-primary);">Leader (Tier A)</div>
+                    <div style="font-size: 0.725rem; color: var(--text-muted);">Projected Target Tier</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Actionable Recommendations -->
+              <div>
+                <div style="font-size: 0.95rem; font-weight: 700; display:flex; align-items:center; justify-content:space-between;">
+                  <span><i class="fa-solid fa-list-check" style="color:var(--brand-emerald)"></i> Prioritized Decarbonization Actions</span>
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">Ranked by ROI &amp; Carbon Impact</span>
+                </div>
+                <div id="recommendationsList" class="rec-list">
+                  <!-- Populated dynamically by prediction.js -->
+                </div>
+              </div>
+
+              <!-- Action Footer: Copy Summary & Export JSON -->
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top: 1.75rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); flex-wrap:wrap; gap:0.75rem;">
+                <button type="button" id="copySummaryBtn" class="btn btn-secondary btn-sm">
+                  <i class="fa-solid fa-copy"></i> Copy Report Summary
+                </button>
+                <button type="button" id="exportSummaryBtn" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-download"></i> Export JSON Assessment
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: MODEL PERFORMANCE ==================== -->
+    <section id="view-performance" class="page-view">
+      <div class="container performance-layout">
+        <div class="section-header" style="text-align:left; margin-bottom: 1rem;">
+          <div class="section-tag">Rigorous Machine Learning Validation</div>
+          <h2 class="section-title">Model Evaluation &amp; Benchmark Performance</h2>
+          <p class="section-desc">Comprehensive statistical validation of our production Random Forest Ensemble against independent test splits and industry baseline algorithms.</p>
+        </div>
+
+        <!-- 5 KPI Summary Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-title">Accuracy</div>
+            <div id="kpiAccuracy" class="kpi-val">81.6%</div>
+            <div class="kpi-sub">Overall Test Precision</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Precision</div>
+            <div id="kpiPrecision" class="kpi-val">81.1%</div>
+            <div class="kpi-sub">Weighted Tier Precision</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Recall</div>
+            <div id="kpiRecall" class="kpi-val">81.6%</div>
+            <div class="kpi-sub">True Positive Rate</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">F1-Score</div>
+            <div id="kpiF1" class="kpi-val">81.0%</div>
+            <div class="kpi-sub">Harmonic Precision-Recall</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">ROC-AUC</div>
+            <div id="kpiRocAuc" class="kpi-val">0.963</div>
+            <div class="kpi-sub">Discrimination Capacity</div>
+          </div>
+        </div>
+
+        <!-- Row 1: ROC Curve & Confusion Matrix -->
+        <div class="charts-two-col">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title"><i class="fa-solid fa-chart-line" style="color:var(--brand-emerald)"></i> ROC-AUC Discrimination Curve</h3>
+                <p class="card-desc">True Positive vs. False Positive Rate across classification thresholds.</p>
+              </div>
+              <span class="badge badge-emerald">AUC = 0.963</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="rocCurveChart"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title"><i class="fa-solid fa-table-cells" style="color:var(--accent-blue)"></i> Multi-Class Confusion Matrix</h3>
+                <p class="card-desc">Cross-tabulation of true tier vs. model predicted tier on test set.</p>
+              </div>
+              <span class="badge badge-blue">375 Test Records</span>
+            </div>
+            <div id="confusionMatrixContainer" style="overflow-x: auto;">
+              <!-- Populated dynamically by performance.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Feature Importance & Algorithm Benchmarks -->
+        <div class="charts-two-col">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title"><i class="fa-solid fa-chart-simple" style="color:var(--accent-cyan)"></i> Feature Importance (Gini Impurity)</h3>
+                <p class="card-desc">Relative weight of each operational factor in sustainability scoring.</p>
+              </div>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="featureImportanceChart"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title"><i class="fa-solid fa-trophy" style="color:var(--accent-amber)"></i> Algorithm Benchmark Comparison</h3>
+                <p class="card-desc">Comparative evaluation of Random Forest against candidate models.</p>
+              </div>
+            </div>
+            <div style="overflow-x: auto;">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Algorithm</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1 Score</th>
+                    <th>Latency</th>
+                  </tr>
+                </thead>
+                <tbody id="benchmarkTableBody">
+                  <!-- Populated dynamically by performance.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 4: DATASET EXPLORER ==================== -->
+    <section id="view-dataset" class="page-view">
+      <div class="container dataset-layout">
+        <div class="section-header" style="text-align:left; margin-bottom: 1rem;">
+          <div class="section-tag">Data Profiling &amp; Transparency</div>
+          <h2 class="section-title">Enterprise Sustainability Dataset Explorer</h2>
+          <p class="section-desc">Inspect the calibrated training corpus of 1,500 industrial facilities, complete with distribution metrics, missing values audit, and paginated sample records.</p>
+        </div>
+
+        <!-- Dataset Summary Metadata Strip -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-title">Total Records</div>
+            <div id="metaTotalRecords" class="kpi-val">1,500</div>
+            <div class="kpi-sub">Facilities Profiled</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Features</div>
+            <div id="metaTotalFeatures" class="kpi-val">15</div>
+            <div class="kpi-sub">Operational Variables</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Data Quality</div>
+            <div id="metaMissingValues" class="kpi-val" style="color:var(--brand-emerald)">0 (Clean)</div>
+            <div class="kpi-sub">Zero Missing Values</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Target Classes</div>
+            <div class="kpi-val font-mono">4 Tiers</div>
+            <div class="kpi-sub">A (Leader) to D (High Risk)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Sectors</div>
+            <div id="metaSegments" class="kpi-val">5 Sectors</div>
+            <div class="kpi-sub">Manufacturing, Tech, HQ...</div>
+          </div>
+        </div>
+
+        <!-- Distribution Charts -->
+        <div class="charts-two-col">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fa-solid fa-chart-column" style="color:var(--brand-emerald)"></i> Renewable Energy Share Distribution</h3>
+            </div>
+            <div class="chart-wrapper" style="min-height: 240px;">
+              <canvas id="distRenewableChart"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fa-solid fa-pie-chart" style="color:var(--accent-blue)"></i> Sustainability Tier Balance</h3>
+            </div>
+            <div class="chart-wrapper" style="min-height: 240px;">
+              <canvas id="distTierChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paginated Data Table with Search and Download -->
+        <div class="card">
+          <div class="table-toolbar">
+            <div style="position: relative; max-width: 340px; width: 100%;">
+              <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1rem; top: 0.85rem; color: var(--text-muted);"></i>
+              <input type="text" id="datasetSearchInput" class="form-input" placeholder="Search facilities, sectors, tiers..." style="padding-left: 2.5rem;">
+            </div>
+
+            <div style="display:flex; gap:0.75rem;">
+              <a href="/api/export-sample-csv" class="btn btn-secondary btn-sm" download="sustainability_dataset.csv">
+                <i class="fa-solid fa-file-csv"></i> Download Dataset CSV
+              </a>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Facility Sector</th>
+                  <th>Monthly kWh</th>
+                  <th>Renewable %</th>
+                  <th>Area</th>
+                  <th>SEER Rating</th>
+                  <th>Recycling %</th>
+                  <th>Carbon Footprint</th>
+                  <th>Sustainability Tier</th>
+                </tr>
+              </thead>
+              <tbody id="datasetTableBody">
+                <!-- Dynamically populated by dataset.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pagination-strip">
+            <div id="pageIndicator" style="font-size: 0.85rem; color: var(--text-secondary);">Page 1 of 150 (1,500 records)</div>
+            <div style="display:flex; gap:0.5rem;">
+              <button id="prevPageBtn" class="btn btn-secondary btn-sm" disabled><i class="fa-solid fa-chevron-left"></i> Previous</button>
+              <button id="nextPageBtn" class="btn btn-secondary btn-sm">Next <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 5: ARCHITECTURE & ABOUT ==================== -->
+    <section id="view-about" class="page-view">
+      <div class="container about-layout">
+        <div class="section-header" style="text-align:left; margin-bottom: 1rem;">
+          <div class="section-tag">Engineering Documentation</div>
+          <h2 class="section-title">System Architecture &amp; ML Methodology</h2>
+          <p class="section-desc">Designed with production software patterns, modular micro-services, and seamless model replacement capabilities.</p>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" style="margin-bottom: 1rem;"><i class="fa-solid fa-bullseye" style="color:var(--brand-emerald)"></i> Project Mission &amp; Relevance</h3>
+          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+            Corporate sustainability is undergoing a seismic shift: regulatory frameworks such as the <strong>EU Corporate Sustainability Due Diligence Directive (CSDDD)</strong>, <strong>CSRD</strong>, and <strong>SEC Climate Disclosures</strong> require verifiable, quantitative emission telemetry. Traditional retrospective audits cost tens of thousands of dollars and provide zero predictive modeling.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.7;">
+            <strong>VerdaMetric AI</strong> solves this by marrying GHG Protocol Scope 1-3 carbon accounting formulas with supervised machine learning ensembles. Organizations can simulate capital interventions (such as rooftop solar PPAs, HVAC variable frequency drive retrofits, and fleet electrification) and verify their projected ESG tier before deploying capital.
+          </p>
+        </div>
+
+        <!-- Technical Pipeline Flow -->
+        <div class="card">
+          <h3 class="card-title" style="margin-bottom: 1rem;"><i class="fa-solid fa-network-wired" style="color:var(--accent-blue)"></i> Technical Pipeline &amp; Tech Stack</h3>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div style="background:var(--bg-tertiary); padding: 1.25rem; border-radius:var(--radius-md);">
+              <h4 style="font-size: 1rem; color:var(--brand-emerald); margin-bottom: 0.5rem;"><i class="fa-brands fa-python"></i> Backend &amp; Inference</h4>
+              <ul style="list-style:none; font-size: 0.85rem; color:var(--text-secondary); display:flex; flex-direction:column; gap:0.4rem;">
+                <li>&bull; Python 3.13 + Flask 3.1</li>
+                <li>&bull; Scikit-learn (RandomForestClassifier)</li>
+                <li>&bull; Pandas &amp; NumPy vectorized transforms</li>
+                <li>&bull; Joblib serialization for .pkl models</li>
+              </ul>
+            </div>
+
+            <div style="background:var(--bg-tertiary); padding: 1.25rem; border-radius:var(--radius-md);">
+              <h4 style="font-size: 1rem; color:var(--accent-cyan); margin-bottom: 0.5rem;"><i class="fa-brands fa-js"></i> Frontend Architecture</h4>
+              <ul style="list-style:none; font-size: 0.85rem; color:var(--text-secondary); display:flex; flex-direction:column; gap:0.4rem;">
+                <li>&bull; Semantic HTML5 &amp; Modern CSS3 Grid</li>
+                <li>&bull; Vanilla ES6+ Modular JavaScript</li>
+                <li>&bull; Chart.js 4.4 Canvas Visualizations</li>
+                <li>&bull; Accessible, WCAG AA contrast compliant</li>
+              </ul>
+            </div>
+
+            <div style="background:var(--bg-tertiary); padding: 1.25rem; border-radius:var(--radius-md);">
+              <h4 style="font-size: 1rem; color:var(--accent-amber); margin-bottom: 0.5rem;"><i class="fa-solid fa-microchip"></i> Machine Learning Core</h4>
+              <ul style="list-style:none; font-size: 0.85rem; color:var(--text-secondary); display:flex; flex-direction:column; gap:0.4rem;">
+                <li>&bull; 180 Decision Trees Ensemble</li>
+                <li>&bull; StandardScaler feature normalization</li>
+                <li>&bull; Multi-class calibrated probability distribution</li>
+                <li>&bull; Real-time recommendation engine mapping</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model Replacement Instructions -->
+        <div class="card" style="border-color: rgba(16, 185, 129, 0.4);">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title"><i class="fa-solid fa-code-merge" style="color:var(--brand-emerald)"></i> Drop-In Model &amp; Dataset Replacement Guide</h3>
+              <p class="card-desc">How to plug your own trained ML model and custom dataset into this website.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" data-open-modal="modelGuide">Open Quick Guide</button>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+            This system was engineered specifically so that any developer or data scientist can swap out the ML model and dataset without rewriting frontend code.
+          </p>
+          <div class="code-block">
+# Step 1: Place your custom trained model and scaler in the models/ directory:
+models/sustainability_model.pkl   # Your custom scikit-learn / XGBoost model
+models/scaler.pkl                 # Your fitted StandardScaler or preprocessor
+
+# Step 2: Place your custom dataset in the data/ directory:
+data/sustainability_data.csv      # Your CSV dataset file
+
+# Step 3: Run the automated training pipeline anytime to re-generate metrics:
+py train_model.py
+
+# Step 4: Restart the Flask server:
+py run.py
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 6: CONTACT ==================== -->
+    <section id="view-contact" class="page-view">
+      <div class="container contact-layout">
+        <!-- Left: Form -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title"><i class="fa-solid fa-envelope" style="color:var(--brand-emerald)"></i> Get in Touch</h3>
+              <p class="card-desc">Have questions regarding deployment, model retraining, or custom ESG metrics?</p>
+            </div>
+          </div>
+
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Full Name</label>
+              <input type="text" id="contactName" class="form-input" placeholder="e.g. Dr. Alex Morgan" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Corporate or Academic Email</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="alex.morgan@enterprise.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Inquiry or Feedback</label>
+              <textarea id="contactMessage" class="form-input" rows="4" placeholder="Detail your query or dataset questions here..." required style="resize:vertical;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+              <i class="fa-solid fa-paper-plane"></i> Send Inquiry
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: FAQ Accordion -->
+        <div>
+          <div class="section-tag">Frequently Asked Questions</div>
+          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">Technical &amp; Deployment FAQ</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Common answers regarding model inference, supported datasets, and framework configuration.
+          </p>
+
+          <div class="faq-accordion">
+            <div class="faq-item open">
+              <button class="faq-question">
+                <span>Can I replace the Random Forest model with XGBoost or LightGBM?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Yes! Any estimator serializable with <code>joblib</code> or <code>pickle</code> that implements standard scikit-learn <code>predict()</code> and <code>predict_proba()</code> APIs can be dropped into <code>models/sustainability_model.pkl</code>.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How are Scope 1, Scope 2, and Scope 3 emissions calculated?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Emissions use international Greenhouse Gas Protocol standards: Scope 1 combines diesel/gasoline combustion (2.68 kg CO2e/liter); Scope 2 multiplies non-renewable grid kWh by regional emissions factors (~0.42 kg CO2e/kWh); Scope 3 aggregates freight ton-km and landfill waste diversion factors.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Is the frontend responsive across all mobile screens?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Yes, the design uses fluid CSS clamp typography, CSS Grid, flexible SVG gauges, responsive Chart.js canvases, and a slide-out mobile drawer for screens from 320px up to 4K displays.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How do I export prediction findings for executive presentations?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Click <strong>Copy Report Summary</strong> on the prediction page to get a clipboard-ready executive summary, or click <strong>Export JSON Assessment</strong> for automated downstream ERP ingestion.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 1rem;">
+          <div class="brand-icon-wrapper"><i class="fa-solid fa-leaf"></i></div>
+          <span>VerdaMetric AI</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); max-width: 320px; line-height: 1.6;">
+          Enterprise AI platform for predictive sustainability analytics, Scope 1-3 footprint forecasting, and quantitative decarbonization intelligence.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Platform</div>
+        <ul class="footer-links">
+          <li><a data-nav="home">Overview</a></li>
+          <li><a data-nav="prediction">Prediction Studio</a></li>
+          <li><a data-nav="performance">Model Performance</a></li>
+          <li><a data-nav="dataset">Dataset Explorer</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Engineering</div>
+        <ul class="footer-links">
+          <li><a data-nav="about">ML Architecture</a></li>
+          <li><a data-open-modal="modelGuide">Model Replacement</a></li>
+          <li><a href="/api/health" target="_blank">Health Status API</a></li>
+          <li><a href="/api/model-metrics" target="_blank">Metrics JSON</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Compliance</div>
+        <ul class="footer-links">
+          <li><a data-nav="about">GHG Protocol Scope 1-3</a></li>
+          <li><a data-nav="about">EU CSRD Alignment</a></li>
+          <li><a data-nav="about">ISO 14064 Framework</a></li>
+          <li><a data-nav="contact">Support &amp; Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 VerdaMetric AI Analytics. Built for academic &amp; enterprise machine learning.</div>
+      <div style="display:flex; gap:1.25rem;">
+        <a data-nav="about" style="color:var(--text-muted)">Documentation</a>
+        <a data-open-modal="modelGuide" style="color:var(--brand-emerald)"><i class="fa-solid fa-code"></i> Model Integration</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Scroll To Top Button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Floating Toast Notifications Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Modal: Model &amp; Dataset Replacement Guide -->
+  <div id="modelGuideModal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="fa-solid fa-code-merge" style="color: var(--brand-emerald)"></i> How to Replace Dataset &amp; ML Model
+        </h3>
+        <button class="btn-icon" data-close-modal style="border:none; background:transparent; font-size:1.2rem;">&times;</button>
+      </div>
+      <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; display: flex; flex-direction: column; gap: 1rem;">
+        <p>
+          You can seamlessly replace the built-in model with your own trained <code>.pkl</code> file and dataset:
+        </p>
+        <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <strong style="color: var(--text-primary);">1. Where to put your dataset:</strong><br>
+          Drop your CSV file into: <code>data/sustainability_data.csv</code>.<br>
+          <small>The Dataset page will immediately load and profile your records.</small>
+        </div>
+
+        <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <strong style="color: var(--text-primary);">2. Where to put your trained ML model:</strong><br>
+          Drop your trained model file into: <code>models/sustainability_model.pkl</code><br>
+          And your fitted scaler into: <code>models/scaler.pkl</code>
+        </div>
+
+        <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <strong style="color: var(--text-primary);">3. Re-generating evaluation metrics:</strong><br>
+          Run <code>py train_model.py</code> in the terminal. It automatically computes accuracy, ROC curves, confusion matrices, and exports <code>models/metrics.json</code> for the Model Performance charts.
+        </div>
+      </div>
+      <div style="margin-top: 1.5rem; text-align: right;">
+        <button class="btn btn-primary btn-sm" data-close-modal>Understood, Close Guide</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/prediction.js"></script>
+  <script src="/static/js/performance.js"></script>
+  <script src="/static/js/dataset.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+{
+  "summary": {
+    "accuracy": 81.6,
+    "precision": 81.23,
+    "recall": 81.6,
+    "f1_score": 81.05,
+    "roc_auc": 0.963,
+    "training_samples": 1125,
+    "test_samples": 375,
+    "total_samples": 1500
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Efficient (Tier B)",
+      "High Risk (Tier D)",
+      "Leader (Tier A)",
+      "Moderate (Tier C)"
+    ],
+    "matrix": [
+      [
+        98,
+        0,
+        0,
+        26
+      ],
+      [
+        0,
+        32,
+        0,
+        18
+      ],
+      [
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        17,
+        5,
+        0,
+        176
+      ]
+    ]
+  },
+  "roc_curve": {
+    "auc": 0.963,
+    "points": [
+      {
+        "fpr": 0.0,
+        "tpr": 0.0,
+        "threshold": Infinity
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.3622,
+        "threshold": 0.8485
+      },
+      {
+        "fpr": 0.0081,
+        "tpr": 0.5276,
+        "threshold": 0.7703
+      },
+      {
+        "fpr": 0.0161,
+        "tpr": 0.5591,
+        "threshold": 0.7381
+      },
+      {
+        "fpr": 0.0202,
+        "tpr": 0.6299,
+        "threshold": 0.6785
+      },
+      {
+        "fpr": 0.0242,
+        "tpr": 0.6772,
+        "threshold": 0.662
+      },
+      {
+        "fpr": 0.0363,
+        "tpr": 0.7323,
+        "threshold": 0.5779
+      },
+      {
+        "fpr": 0.0444,
+        "tpr": 0.7717,
+        "threshold": 0.5389
+      },
+      {
+        "fpr": 0.0524,
+        "tpr": 0.7795,
+        "threshold": 0.5205
+      },
+      {
+        "fpr": 0.0645,
+        "tpr": 0.7874,
+        "threshold": 0.5036
+      },
+      {
+        "fpr": 0.0766,
+        "tpr": 0.8031,
+        "threshold": 0.4784
+      },
+      {
+        "fpr": 0.0806,
+        "tpr": 0.8189,
+        "threshold": 0.4718
+      },
+      {
+        "fpr": 0.1048,
+        "tpr": 0.8346,
+        "threshold": 0.4342
+      },
+      {
+        "fpr": 0.1089,
+        "tpr": 0.874,
+        "threshold": 0.4183
+      },
+      {
+        "fpr": 0.121,
+        "tpr": 0.9055,
+        "threshold": 0.3705
+      },
+      {
+        "fpr": 0.125,
+        "tpr": 0.9134,
+        "threshold": 0.3649
+      },
+      {
+        "fpr": 0.1371,
+        "tpr": 0.9291,
+        "threshold": 0.343
+      },
+      {
+        "fpr": 0.1694,
+        "tpr": 0.937,
+        "threshold": 0.3139
+      },
+      {
+        "fpr": 0.1774,
+        "tpr": 0.9606,
+        "threshold": 0.3005
+      },
+      {
+        "fpr": 0.2218,
+        "tpr": 0.9685,
+        "threshold": 0.2782
+      },
+      {
+        "fpr": 0.246,
+        "tpr": 0.9764,
+        "threshold": 0.2645
+      },
+      {
+        "fpr": 0.2823,
+        "tpr": 0.9921,
+        "threshold": 0.2207
+      },
+      {
+        "fpr": 0.2944,
+        "tpr": 1.0,
+        "threshold": 0.2116
+      },
+      {
+        "fpr": 0.9677,
+        "tpr": 1.0,
+        "threshold": 0.0016
+      },
+      {
+        "fpr": 1.0,
+        "tpr": 1.0,
+        "threshold": 0.0
+      }
+    ]
+  },
+  "feature_importance": [
+    {
+      "feature": "renewable_energy_pct",
+      "importance": 34.61
+    },
+    {
+      "feature": "equipment_efficiency_rating",
+      "importance": 12.66
+    },
+    {
+      "feature": "waste_recycled_pct",
+      "importance": 11.93
+    },
+    {
+      "feature": "monthly_energy_kwh",
+      "importance": 8.81
+    },
+    {
+      "feature": "water_usage_m3",
+      "importance": 8.39
+    },
+    {
+      "feature": "facility_area_sqm",
+      "importance": 5.71
+    },
+    {
+      "feature": "logistics_distance_km",
+      "importance": 5.44
+    },
+    {
+      "feature": "fuel_consumed_liters",
+      "importance": 5.09
+    },
+    {
+      "feature": "peak_load_factor",
+      "importance": 4.85
+    },
+    {
+      "feature": "operational_days_year",
+      "importance": 2.51
+    }
+  ],
+  "benchmarks": [
+    {
+      "model": "Random Forest (Ensemble)",
+      "accuracy": 81.6,
+      "precision": 81.23,
+      "recall": 81.6,
+      "f1_score": 81.05,
+      "inference_ms": 1.8,
+      "is_active": true
+    },
+    {
+      "model": "Gradient Boosting Trees",
+      "accuracy": 81.33,
+      "precision": 81.36,
+      "recall": 81.33,
+      "f1_score": 81.17,
+      "inference_ms": 3.4,
+      "is_active": false
+    },
+    {
+      "model": "Multinomial Logistic Regression",
+      "accuracy": 84.53,
+      "precision": 83.9,
+      "recall": 84.53,
+      "f1_score": 84.07,
+      "inference_ms": 0.6,
+      "is_active": false
+    }
+  ],
+  "classes": [
+    "Efficient (Tier B)",
+    "High Risk (Tier D)",
+    "Leader (Tier A)",
+    "Moderate (Tier C)"
+  ]
+}

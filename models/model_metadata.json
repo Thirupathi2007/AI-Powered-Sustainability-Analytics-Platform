@@ -1,0 +1,85 @@
+{
+  "model_name": "Enterprise Sustainability Classifier",
+  "algorithm": "RandomForestClassifier",
+  "version": "2.4.0",
+  "feature_names": [
+    "monthly_energy_kwh",
+    "renewable_energy_pct",
+    "peak_load_factor",
+    "facility_area_sqm",
+    "operational_days_year",
+    "equipment_efficiency_rating",
+    "logistics_distance_km",
+    "fuel_consumed_liters",
+    "waste_recycled_pct",
+    "water_usage_m3"
+  ],
+  "classes": [
+    "Efficient (Tier B)",
+    "High Risk (Tier D)",
+    "Leader (Tier A)",
+    "Moderate (Tier C)"
+  ],
+  "feature_defaults": {
+    "monthly_energy_kwh": {
+      "min": 1000,
+      "max": 500000,
+      "default": 45000,
+      "unit": "kWh"
+    },
+    "renewable_energy_pct": {
+      "min": 0,
+      "max": 100,
+      "default": 35.0,
+      "unit": "%"
+    },
+    "peak_load_factor": {
+      "min": 0.1,
+      "max": 1.0,
+      "default": 0.65,
+      "unit": "ratio"
+    },
+    "facility_area_sqm": {
+      "min": 500,
+      "max": 100000,
+      "default": 18000,
+      "unit": "m\u00b2"
+    },
+    "operational_days_year": {
+      "min": 100,
+      "max": 365,
+      "default": 300,
+      "unit": "days"
+    },
+    "equipment_efficiency_rating": {
+      "min": 1.0,
+      "max": 5.0,
+      "default": 3.5,
+      "unit": "SEER rating"
+    },
+    "logistics_distance_km": {
+      "min": 0,
+      "max": 100000,
+      "default": 12000,
+      "unit": "km/mo"
+    },
+    "fuel_consumed_liters": {
+      "min": 0,
+      "max": 30000,
+      "default": 3200,
+      "unit": "liters/mo"
+    },
+    "waste_recycled_pct": {
+      "min": 0,
+      "max": 100,
+      "default": 45.0,
+      "unit": "%"
+    },
+    "water_usage_m3": {
+      "min": 10,
+      "max": 10000,
+      "default": 650,
+      "unit": "m\u00b3/mo"
+    }
+  }
+}
